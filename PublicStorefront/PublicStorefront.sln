@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicStorefront", "PublicStorefront\PublicStorefront.csproj", "{DE73FE77-9004-42F0-A017-D24B8E29E992}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicStorefront", "PublicStorefront\PublicStorefront.csproj", "{6344A7D3-2581-476B-9A2C-B8CA2B3AB63E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PublicStorefront.Database", "PublicStorefront.Database\PublicStorefront.Database.sqlproj", "{5AB2473E-9570-4074-8607-54A5DAA15115}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE73FE77-9004-42F0-A017-D24B8E29E992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE73FE77-9004-42F0-A017-D24B8E29E992}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE73FE77-9004-42F0-A017-D24B8E29E992}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE73FE77-9004-42F0-A017-D24B8E29E992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6344A7D3-2581-476B-9A2C-B8CA2B3AB63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6344A7D3-2581-476B-9A2C-B8CA2B3AB63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6344A7D3-2581-476B-9A2C-B8CA2B3AB63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6344A7D3-2581-476B-9A2C-B8CA2B3AB63E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB2473E-9570-4074-8607-54A5DAA15115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB2473E-9570-4074-8607-54A5DAA15115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB2473E-9570-4074-8607-54A5DAA15115}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5AB2473E-9570-4074-8607-54A5DAA15115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB2473E-9570-4074-8607-54A5DAA15115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB2473E-9570-4074-8607-54A5DAA15115}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9B736453-24E8-4E62-868E-7B29D8F795B2}
+		SolutionGuid = {5CBB27EF-B863-4044-92F3-08CD367EB719}
 	EndGlobalSection
 EndGlobal

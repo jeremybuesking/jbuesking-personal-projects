@@ -1,19 +1,25 @@
-﻿@{
-    ViewBag.Title = "Public Storefront - Home";
+﻿@model PublicStorefront.Models.ItemListViewModel
+@{
+    ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>@ViewBag.Greeting</h1>
+    <h1>Welcome to Public Storefront!</h1>
+    <p class="lead">Scroll down to see the latest we have to offer!</p>
+    <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2></h2>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-    </div>
+    @foreach (var item in Model.Items) { 
+        <div class="col-md-4">
+            <h3>@item.Name</h3>
+            <div>@item.Category</div>
+            <div>@item.Description</div>
+            <div>@item.Price.ToString("C")</div>
+        </div>
+    }
+</div>
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, page => Url.Action("Index", new { page }))
 </div>

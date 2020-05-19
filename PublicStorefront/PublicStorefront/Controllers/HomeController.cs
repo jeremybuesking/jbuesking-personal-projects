@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PublicStorefront;
+using PublicStorefront.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +10,28 @@ namespace PublicStorefront.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private PublicStorefrontDatabase _db = new PublicStorefrontDatabase();
+        public ActionResult Index(int page = 1, int pageSize = 4)
         {
-            /* FIXME: Make this into a popup badge of some sort */
-            int hour = DateTime.Now.Hour;
-            ViewBag.Greeting = hour < 12 ? "Good Morning, User!" : "Good Afternoon, User!";
-            return View();
+            List<Item> items =
+                _db.Items
+                    .OrderBy(x => x.Name)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToList();
+
+            var model = new ItemListViewModel
+            {
+                Items = items,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalItems = _db.Items.Count()
+                }
+            };
+
+            return View(model);
         }
 
         public ActionResult About()
