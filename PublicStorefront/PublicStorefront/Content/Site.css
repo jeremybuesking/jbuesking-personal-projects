@@ -17,3 +17,44 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.tron-image-home {
+    background-image: url('/Content/Images/homepage-photo-storefront.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding-top: 258px;
+    padding-bottom: 0px;
+}
+
+.tron-image-grocery {
+    background-image: url('/Content/Images/grocery-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 258px;
+    padding-bottom: 0px;
+}
+
+.tron-image-kitchen {
+    background-image: url('/Content/Images/kitchen-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 258px;
+    padding-bottom: 0px;
+}
+
+.tron-image-outdoor {
+    background-image: url('/Content/Images/outdoor-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 258px;
+    padding-bottom: 0px;
+}
+
+.tron-text {
+    color: azure;
+}

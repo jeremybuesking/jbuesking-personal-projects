@@ -39,7 +39,7 @@ namespace PublicStorefront
 
                 var li = new TagBuilder("li");
                 li.InnerHtml = a.ToString();
-                li.AddCssClass("page-item");
+                li.AddCssClass(i == pagingInfo.CurrentPage ? "page-item active" : "page-item");
 
                 result.Append(li.ToString());
             }

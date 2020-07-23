@@ -1,0 +1,12 @@
+﻿@model PublicStorefront.ViewModels.CartIndexViewModel
+@{
+    ViewBag.Title = "Your Cart";
+}
+
+<h2>Your Cart</h2>
+
+@foreach(var item in Model.Cart.Lines) { 
+    <h3>@item.Item</h3>
+    <h3>@item.Quantity</h3>
+}
+

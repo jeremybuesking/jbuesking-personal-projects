@@ -1,0 +1,20 @@
+﻿@model PublicStorefront.Models.ItemListViewModel
+
+<div class="storefront-body">
+    <div class="jumbotron jumbotron-fluid tron-image-grocery">
+        <div class="container">
+            
+        </div>
+    </div>
+    <h1 class="display-3">Grocery</h1>
+    <div class="row">
+        @foreach (var item in Model.Items)
+        {
+            @Html.Partial("ItemSummary", item)
+        }
+    </div>
+
+    <div>
+        @Html.PageLinks(Model.PagingInfo, page => Url.Action("Grocery", new { page }))
+    </div>
+</div>

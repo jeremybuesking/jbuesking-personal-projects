@@ -131,14 +131,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\ItemListViewModel.cs" />
+    <Compile Include="ViewModels\CartIndexViewModel.cs" />
+    <Compile Include="ViewModels\ItemListViewModel.cs" />
     <Compile Include="Models\PublicStorefrontDatabase.cs" />
+    <Compile Include="Models\ShippingDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,8 +151,13 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-slate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\grocery-home.jpg" />
+    <Content Include="Content\Images\homepage-photo-storefront.jpg" />
+    <Content Include="Content\Images\kitchen-home.jpg" />
+    <Content Include="Content\Images\outdoor-home.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -280,6 +290,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper.min.js.map" />
     <Content Include="Scripts\README.md" />
+    <Content Include="Views\Shared\ItemSummary.cshtml" />
+    <Content Include="Views\Shop\Grocery.cshtml" />
+    <Content Include="Views\Shop\Kitchen.cshtml" />
+    <Content Include="Views\Shop\Outdoor.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\Completed.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

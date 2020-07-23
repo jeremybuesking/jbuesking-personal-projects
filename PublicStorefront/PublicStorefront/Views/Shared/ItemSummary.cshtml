@@ -1,0 +1,19 @@
+﻿@model PublicStorefront.Models.Item
+
+<div class="col-md-3 p-2">
+    <div class="card">
+        <div class="card-body">
+            <h4><strong>@Model.Name</strong></h4>
+            <div class="font-italic">@Model.Category</div>
+            <span class="badge badge-dark">@Model.Price.ToString("C")</span>
+            <div>@Model.Description</div>
+
+            @using (Html.BeginForm("AddToCart", "Cart"))
+            {
+                @Html.Hidden("itemId", Model.Id)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <button type="submit" class="btn btn-success">Add to cart</button>
+            }
+        </div>
+    </div>
+</div>

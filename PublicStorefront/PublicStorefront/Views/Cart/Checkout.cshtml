@@ -1,0 +1,48 @@
+﻿@model PublicStorefront.Models.ShippingDetails
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h1>Checkout</h1>
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true, "", htmlAttributes: new { @class = "text-danger" })
+    <hr class="border-dark" />
+
+    <h3>Ship to:</h3>
+    <div class="form-group row">
+        <div class="col-12">
+            <label for="FirstName">First Name</label>
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+
+            <label for="LastName">Last Name</label>
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <h3>Address:</h3>
+    <div class="form-group">
+        <label for="Street">Street</label>
+        @Html.TextBoxFor(x => x.Street, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Street, "", new { @class = "text-danger" })
+
+        <label for="City">City</label>
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.City, "", new { @class = "text-danger" })
+
+        <label for="State">State</label>
+        @Html.TextBoxFor(x => x.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.State, "", new { @class = "text-danger" })
+
+        <label for="Zip">Zip Code</label>
+        @Html.TextBoxFor(x => x.Zip, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Zip, "", new { @class = "text-danger" })
+    </div>
+
+    @Html.ActionLink("Continue to checkout", "Checkout", null, new { @class = "btn btn-primary"})
+}

@@ -2,7 +2,9 @@
 using PublicStorefront.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity; // Needed for ToListAsync and CountAsync
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,14 +13,17 @@ namespace PublicStorefront.Controllers
     public class HomeController : Controller
     {
         private PublicStorefrontDatabase _db = new PublicStorefrontDatabase();
-        public ActionResult Index(int page = 1, int pageSize = 4)
+        public async Task<ActionResult> Index(int page = 1, int pageSize = 4)
         {
             List<Item> items =
-                _db.Items
-                    .OrderBy(x => x.Name)
-                    .Skip((page - 1) * pageSize)
-                    .Take(pageSize)
-                    .ToList();
+                await _db.Items
+                         .OrderBy(x => x.Name)
+                         .Skip((page - 1) * pageSize)
+                         .Take(pageSize)
+                         .ToListAsync();
+
+            int count =
+                await _db.Items.CountAsync();
 
             var model = new ItemListViewModel
             {
@@ -27,7 +32,7 @@ namespace PublicStorefront.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = _db.Items.Count()
+                    TotalItems = count
                 }
             };
 

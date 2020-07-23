@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -18,11 +19,24 @@
                 <li class="nav-item">
                     @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("Grocery", "Grocery", "Shop", null, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Kitchen", "Kitchen", "Shop", null, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Outdoor", "Outdoor", "Shop", null, new { @class = "dropdown-item" })
+                    </div>
+                </li>
                 <li class="nav-item">
                     @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
                     @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Cart", "Index", "Cart", null, new { @class = "nav-link" })
                 </li>
             </ul>
         </div>

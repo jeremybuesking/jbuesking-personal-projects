@@ -23,7 +23,8 @@ namespace PublicStorefront.Models
         [StringLength(50, ErrorMessage = "Category name is too long. Character count: 50")]
         public string Category { get; set; }
 
-        //FIZME: Make NOT NULL
         public decimal Price { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

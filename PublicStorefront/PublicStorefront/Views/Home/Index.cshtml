@@ -3,20 +3,16 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Welcome to Public Storefront!</h1>
-    <p class="lead">Scroll down to see the latest we have to offer!</p>
-    <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron tron-image-home">
+    <div class="tron-text">
+        <h1>Welcome to Public Storefront!</h1>
+    </div>
 </div>
 
 <div class="row">
-    @foreach (var item in Model.Items) { 
-        <div class="col-md-4">
-            <h3>@item.Name</h3>
-            <div>@item.Category</div>
-            <div>@item.Description</div>
-            <div>@item.Price.ToString("C")</div>
-        </div>
+    @foreach (var item in Model.Items)
+    {
+        @Html.Partial("ItemSummary", item)
     }
 </div>
 
