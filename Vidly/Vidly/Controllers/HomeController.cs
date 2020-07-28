@@ -9,12 +9,6 @@ namespace Vidly.Controllers
 {
   public class HomeController : Controller
   {
-    private List<Customer> customers = new List<Customer> {
-        new Customer { Id = 1, Name = "Trevor"},
-        new Customer { Id = 2, Name = "Sandy"},
-        new Customer { Id = 3, Name = "Dane"},
-        new Customer { Id = 4, Name = "Pam"}
-     };
     //private List<Customer> customers = new List<Customer>();
     private List<Movie> movies = new List<Movie>
     {
@@ -28,24 +22,6 @@ namespace Vidly.Controllers
     public ActionResult Index()
     {
       return View();
-    }
-
-    public ActionResult Viewers()
-    {
-      ViewBag.Message = "Your viewers description page.";
-
-      return View(customers);
-    }
-
-    public ActionResult Details(int id)
-    {
-      Customer current = new Customer();
-      foreach (var viewer in customers) {
-        if (viewer.Id == id) {
-          current = viewer;
-        }
-      }
-      return View(current);
     }
 
     public ActionResult Movies()
