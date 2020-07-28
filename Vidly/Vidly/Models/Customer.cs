@@ -13,7 +13,10 @@ namespace Vidly.Models
     [Required]
     [StringLength(255)]
     public string Name { get; set; }
+    public string Birthdate { get; set; }
     public bool IsSubscribed { get; set; }
+
+    [Display(Name = "Membership Type")]
     public MembershipType MembershipType { get; set; }
     public byte MembershipTypeId { get; set; }
   }

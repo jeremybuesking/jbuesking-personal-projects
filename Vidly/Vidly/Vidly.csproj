@@ -161,12 +161,30 @@
     <Compile Include="Migrations\202007281553520_SetNameOfMembershipTypes.designer.cs">
       <DependentUpon>202007281553520_SetNameOfMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007281616281_AddBirthdayToCustomer.cs" />
+    <Compile Include="Migrations\202007281616281_AddBirthdayToCustomer.designer.cs">
+      <DependentUpon>202007281616281_AddBirthdayToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007281649044_AddMovieAndGenreModel.cs" />
+    <Compile Include="Migrations\202007281649044_AddMovieAndGenreModel.designer.cs">
+      <DependentUpon>202007281649044_AddMovieAndGenreModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007281703410_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\202007281703410_PopulateGenresTable.designer.cs">
+      <DependentUpon>202007281703410_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007281714487_PopulateMoviesTable.cs" />
+    <Compile Include="Migrations\202007281714487_PopulateMoviesTable.designer.cs">
+      <DependentUpon>202007281714487_PopulateMoviesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ViewerFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,13 +223,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
-    <Content Include="Views\Home\Movies.cshtml" />
     <Content Include="Views\Viewers\Index.cshtml" />
     <Content Include="Views\Viewers\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Viewers\AddViewer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -247,6 +266,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007281553520_SetNameOfMembershipTypes.resx">
       <DependentUpon>202007281553520_SetNameOfMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281616281_AddBirthdayToCustomer.resx">
+      <DependentUpon>202007281616281_AddBirthdayToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281649044_AddMovieAndGenreModel.resx">
+      <DependentUpon>202007281649044_AddMovieAndGenreModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281703410_PopulateGenresTable.resx">
+      <DependentUpon>202007281703410_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281714487_PopulateMoviesTable.resx">
+      <DependentUpon>202007281714487_PopulateMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
