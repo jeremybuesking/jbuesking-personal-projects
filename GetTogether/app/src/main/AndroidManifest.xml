@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.ranken.jbuesking.gettogether">
+
+    <application
+        android:name=".data.GetTogetherApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustResize">
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:parentActivityName=".ui.activity.DashboardActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.DashboardActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.CreateEventActivity"
+            android:label="@string/title_activity_create_event"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".ui.activity.ViewGroupActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ViewGroupActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.activity.UserProfileActivity"
+            android:parentActivityName=".ui.activity.ViewGroupActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ViewGroupActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.activity.ViewGroupActivity"
+            android:label="@string/title_activity_view_group"
+            android:parentActivityName=".ui.activity.DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.DashboardActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.CreateGroupActivity"
+            android:label="@string/title_activity_create_group"
+            android:parentActivityName=".ui.activity.DashboardActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.DashboardActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".ui.activity.CreateUserActivity"
+            android:label="@string/title_activity_create_user"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

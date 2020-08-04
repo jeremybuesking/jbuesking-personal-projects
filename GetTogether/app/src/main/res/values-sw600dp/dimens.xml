@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_guide">210dp</dimen>
+
+    <dimen name="textSizeBody">20sp</dimen>
+    <dimen name="textSizeSub">22sp</dimen>
+    <dimen name="textSizeHeadline">32sp</dimen>
+    <dimen name="textSizeHeader">26sp</dimen>
+</resources>

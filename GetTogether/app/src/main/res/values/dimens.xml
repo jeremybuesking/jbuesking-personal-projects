@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="horizontal_guide">190dp</dimen>
+
+    <dimen name="textSizeBody">14sp</dimen>
+    <dimen name="textSizeSub">16sp</dimen>
+    <dimen name="textSizeHeadline">28sp</dimen>
+    <dimen name="textSizeHeader">20sp</dimen>
+</resources>

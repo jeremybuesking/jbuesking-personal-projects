@@ -1,0 +1,67 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="textViewStyleHeadline" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">@dimen/textSizeHeadline</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+    </style>
+
+    <style name="textViewStyleHeader" parent="TextAppearance.AppCompat.Display2">
+        <item name="android:textSize">@dimen/textSizeHeader</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+    </style>
+
+    <style name="textViewStyleSub" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/textSizeSub</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+    </style>
+
+    <style name="textViewStyleBody" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/textSizeBody</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+    </style>
+
+    <style name="editTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textAppearance">@color/colorAccentDark</item>
+        <item name="android:hint">@color/colorAccentLight</item>
+        <item name="android:textSize">@style/TextAppearance.AppCompat.Large</item>
+    </style>
+
+    <style name="buttonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:padding">14dp</item>
+    </style>
+
+    <style name="buttonStyleSmall" parent="Widget.AppCompat.Button">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textColor">@color/colorAccentDark</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

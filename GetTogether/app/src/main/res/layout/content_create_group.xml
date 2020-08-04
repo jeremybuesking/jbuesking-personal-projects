@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/label_group_create_organizer"
+        style="@style/textViewStyleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_create_group_organizer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/organizer_name"
+        style="@style/textViewStyleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/label_group_create_organizer"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/label_group_create_name"
+        style="@style/textViewStyleBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_group_create_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_group_create_organizer" />
+
+    <EditText
+        android:id="@+id/text_group_create_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_group_create_name" />
+
+    <TextView
+        android:id="@+id/label_group_create_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        style="@style/textViewStyleBody"
+        android:text="@string/label_group_create_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_group_create_name" />
+
+    <EditText
+        android:id="@+id/text_group_create_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_group_create_description" />
+
+    <CheckBox
+        android:id="@+id/checkbox_technology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_technology"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_gaming"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_gaming" />
+
+    <CheckBox
+        android:id="@+id/checkbox_gaming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_gaming"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_group_create_description" />
+
+    <CheckBox
+        android:id="@+id/checkbox_travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_travel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_gaming" />
+
+    <CheckBox
+        android:id="@+id/checkbox_outdoors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_outdoors"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_technology"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_technology" />
+
+    <CheckBox
+        android:id="@+id/checkbox_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_food"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_social"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_social" />
+
+    <CheckBox
+        android:id="@+id/checkbox_social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_social"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_pets"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_pets" />
+
+    <CheckBox
+        android:id="@+id/checkbox_film"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_film"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_music"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_music" />
+
+    <CheckBox
+        android:id="@+id/checkbox_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_music"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_travel"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_travel" />
+
+    <CheckBox
+        android:id="@+id/checkbox_arts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_arts"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_film"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_film" />
+
+    <CheckBox
+        android:id="@+id/checkbox_pets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_pets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_sports" />
+
+    <CheckBox
+        android:id="@+id/checkbox_career"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_career"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_sports"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_sports" />
+
+    <CheckBox
+        android:id="@+id/checkbox_sports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_sports"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_travel" />
+
+    <CheckBox
+        android:id="@+id/checkbox_politics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/label_checkbox_politics"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox_career"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_career" />
+
+    <Button
+        android:id="@+id/buttonSaveGroup"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/button_label_save_group"
+        android:onClick="onSaveGroup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_food" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
