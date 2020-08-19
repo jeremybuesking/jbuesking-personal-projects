@@ -1,4 +1,4 @@
-﻿@*@model List<Vidly.Models.Customer>*@
+﻿@model IEnumerable<Vidly.Models.Customer>
 @{
     ViewBag.Title = "Viewers";
 }
@@ -54,7 +54,7 @@
                         }
                     },
                     {
-                        data: "name"
+                        data: "membershipType.name"
                     },
                     {
                         data: "id",

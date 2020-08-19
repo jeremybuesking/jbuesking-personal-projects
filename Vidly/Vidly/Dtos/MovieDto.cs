@@ -13,6 +13,8 @@ namespace Vidly.Dtos
     [Required(ErrorMessage = "Must Enter Movie Name")]
     public string Name { get; set; }
 
+    public GenreDto Genre { get; set; }
+
     [Display(Name = "Genre")]
     [Required(ErrorMessage = "Must Select Genre")]
     public byte GenreId { get; set; }
