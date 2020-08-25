@@ -21,6 +21,7 @@ namespace Vidly.Controllers
       _db.Dispose();
     }
 
+    //[Authorize]
     public ActionResult Index()
     {
       ViewBag.Message = "Your viewers description page.";
