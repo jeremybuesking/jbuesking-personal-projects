@@ -10,19 +10,18 @@ namespace Vidly.Models
   {
     public int Id { get; set; }
 
-    [Required(ErrorMessage = "Name is required")]
-    [StringLength(255, ErrorMessage = "Name must be under 255 characters")]
+    [Required(ErrorMessage = "Please enter a name")]
+    [StringLength(255)]
     public string Name { get; set; }
 
     [Display(Name = "Date of Birth")]
-    [Min18YearsIfAMember]
     public DateTime? Birthdate { get; set; }
-    public bool IsSubscribed { get; set; }
+    public bool IsSubscribedToNewsletter { get; set; }
 
-    [Display(Name = "Membership Type")]
     public MembershipType MembershipType { get; set; }
 
-    [Required(ErrorMessage = "Must select a membership type")]
+    [Required(ErrorMessage = "Please select a membership type")]
+    [Display(Name = "Membership Type")]
     public byte MembershipTypeId { get; set; }
   }
 }

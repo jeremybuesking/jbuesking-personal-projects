@@ -1,0 +1,28 @@
+﻿@model Vidly.ViewModels.CustomerRentalViewModel
+
+@{
+    ViewBag.Title = Model.Customer.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Customer.Name</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">Membership Type: @Model.Customer.MembershipType.Name</li>
+    @if (Model.Customer.Birthdate.HasValue)
+    {
+        <li class="list-group-item">Birthdate: @Model.Customer.Birthdate.Value.ToShortDateString()</li>
+    }
+</ul>
+<hr />
+
+<h2>Current Rentals</h2>
+
+<ul class="list-group">
+    @foreach (var rental in Model.Rentals)
+    { 
+        <li class="list-group-item">
+            @rental.Movie.Name | Date Rented: @rental.DateRented.ToShortDateString()
+        </li>
+    }
+</ul>

@@ -3,18 +3,21 @@
 }
 
 <div class="jumbotron">
-    <h1>Welcome to Vidly</h1>
-    <p class="lead">Video sharing community</p>
+    <h1>Hello, @User.Identity.Name</h1>
+    <div>
+        @Html.ActionLink(HttpUtility.HtmlDecode("Start a new rental &raquo;"), "New", "Rentals", null, new { @class = "btn btn-primary btn-lg" })
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Messages from management</h2>
+        <p>
+            Don't forget to blah blah placeholder while I create a tool for managers to submit messgaes
+        </p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
     </div>
     <div class="col-md-4">
-        <h2>Cool stuff</h2>
     </div>
 </div>

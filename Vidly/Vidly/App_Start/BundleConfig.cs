@@ -11,11 +11,11 @@ namespace Vidly
       bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                   "~/Scripts/jquery-{version}.js",
                   "~/Scripts/bootstrap.js",
-                  "~/scripts/bootbox.js",
-                  "~/scripts/datatables/jquery.dataTables.js",
-                  "~/scripts/datatables/dataTables.bootstrap4.js"));
-
-      //cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js
+                  "~/Scripts/bootbox.js",
+                  "~/Scripts/DataTables/jquery.dataTables.js",
+                  "~/Scripts/DataTables/dataTables.bootstrap4.js",
+                  "~/Scripts/typeahead.bundle.js",
+                  "~/Scripts/toastr.js"));
 
       bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                   "~/Scripts/jquery.validate*"));
@@ -26,10 +26,10 @@ namespace Vidly
                   "~/Scripts/modernizr-*"));
 
       bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap-darkly.css",
-                "~/Content/bootstrap-theme.css",
+                "~/Content/bootstrap-lumen.css",
                 "~/Content/DataTables/css/dataTables.bootstrap4.css",
-                "~/Content/DataTables/css/jquery.dataTables.css",
+                "~/Content/typeahead.css",
+                "~/Content/toastr.css",
                 "~/Content/site.css"));
     }
   }

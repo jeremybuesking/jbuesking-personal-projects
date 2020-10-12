@@ -1,118 +1,111 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity.Validation;
 
 namespace Vidly.Controllers
 {
   public class MoviesController : Controller
   {
-    private AppDbContext _db;
+    private ApplicationDbContext _context;
 
-    public MoviesController() 
+    public MoviesController()
     {
-      _db = new AppDbContext();
+      _context = new ApplicationDbContext();
     }
 
     protected override void Dispose(bool disposing)
     {
-      _db.Dispose();
+      _context.Dispose();
     }
 
-    public ActionResult Index()
+    public ViewResult Index()
     {
-      var movies = _db.Movies.Include("Genre").ToList();
-
-      return View(movies);
+      if (User.IsInRole(RoleName.CanManageMovies))
+      {
+        return View("Index");
+      }
+        
+      return View("ReadOnlyIndex");
     }
 
-    public ActionResult Details(int id) 
+    [Authorize(Roles = RoleName.CanManageMovies)]
+    public ViewResult New()
     {
-      var current = _db.Movies.Include("Genre").SingleOrDefault(x => x.Id == id);
-
-      return View(current);
-    }
-
-    public ActionResult AddMovie()
-    {
-      var genres = _db.Genres.ToList();
+      var genres = _context.Genres.ToList();
 
       var viewModel = new MovieFormViewModel
       {
         Genres = genres
       };
 
-      return View(viewModel);
+      return View("MovieForm", viewModel);
     }
 
-    public ActionResult EditMovie(int id) 
+    public ActionResult Edit(int id)
     {
-      var currentMovie = _db.Movies.SingleOrDefault(x => x.Id == id);
+      var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
-      if (currentMovie == null)
-      {
+      if (movie == null)
         return HttpNotFound();
-      }
 
-      var viewModel = new MovieFormViewModel(currentMovie)
+      var viewModel = new MovieFormViewModel(movie)
       {
-        Genres = _db.Genres.ToList(),
+        Genres = _context.Genres.ToList()
       };
 
-      return View("AddMovie", viewModel);
+      return View("MovieForm", viewModel);
+    }
+
+
+    public ActionResult Details(int id)
+    {
+      var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+      if (movie == null)
+        return HttpNotFound();
+
+      return View(movie);
+
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult SaveMovie(Movie movie)
+    public ActionResult Save(Movie movie)
     {
       if (!ModelState.IsValid)
       {
-        var viewModel = new MovieFormViewModel(movie) {
-          Genres = _db.Genres.ToList()
+        var viewModel = new MovieFormViewModel(movie)
+        {
+          Genres = _context.Genres.ToList()
         };
 
-        return View("AddMovie", viewModel);
+        return View("MovieForm", viewModel);
       }
 
       if (movie.Id == 0)
       {
         movie.DateAdded = DateTime.Now;
-        _db.Movies.Add(movie);
+        movie.NumberAvailable = movie.NumberInStock;
+        _context.Movies.Add(movie);
       }
-      else 
+      else
       {
-        var currentMovie = _db.Movies.Single(x => x.Id == movie.Id);
-
-        currentMovie.Name = movie.Name;
-        currentMovie.ReleaseDate = movie.ReleaseDate;
-        currentMovie.GenreId = movie.GenreId;
+        var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+        movieInDb.Name = movie.Name;
+        movieInDb.GenreId = movie.GenreId;
+        movieInDb.NumberInStock = movie.NumberInStock;
+        movieInDb.ReleaseDate = movie.ReleaseDate;
       }
-      _db.SaveChanges();
+
+      _context.SaveChanges();
 
       return RedirectToAction("Index", "Movies");
-    }
-
-    public ActionResult Random()
-    {
-      var movie = new Movie { Name = "Sunshine", Id = 1 };
-      var customers = new List<Customer> {
-        new Customer {Id = 1, Name = "Trevor"},
-        new Customer { Id = 2, Name = "Sandy"},
-        new Customer { Id = 3, Name = "Dane"},
-        new Customer { Id = 4, Name = "Pam"}
-      };
-
-      var viewModel = new RandomMovieViewModel
-      {
-        Customers = customers,
-        Movie = movie
-      };
-
-      return View(viewModel);
     }
   }
 }

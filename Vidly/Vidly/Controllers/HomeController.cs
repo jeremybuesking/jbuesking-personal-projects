@@ -3,32 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Vidly.Models;
 
 namespace Vidly.Controllers
 {
+  [AllowAnonymous]
   public class HomeController : Controller
   {
-    //private List<Customer> customers = new List<Customer>();
-    private List<Movie> movies = new List<Movie>
-    {
-      new Movie { Id = 1, Name = "Sunshine"},
-      new Movie { Id = 1, Name = "Get Out"},
-      new Movie { Id = 1, Name = "The Lion King"},
-      new Movie { Id = 1, Name = "The Mummy"},
-      new Movie { Id = 1, Name = "Rain Man"},
-    };
-
     public ActionResult Index()
     {
       return View();
     }
 
-    public ActionResult Movies()
+    public ActionResult About()
     {
-      ViewBag.Message = "Your movies page.";
+      ViewBag.Message = "Your application description page.";
 
-      return View(movies);
+      return View();
+    }
+
+    public ActionResult Contact()
+    {
+      ViewBag.Message = "Your contact page.";
+
+      return View();
     }
   }
 }
